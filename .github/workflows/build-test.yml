@@ -6,7 +6,7 @@ on:
       - 'docker/*'
     branches:
       - dev
-      - BIOW-5-Create-FreeBayes-Container
+      - BIOW-*
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
