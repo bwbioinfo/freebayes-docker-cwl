@@ -1,12 +1,12 @@
-name: Build and Push Docker Image
+name: Build Docker Image
 
 on:
   push:
     paths:
       - 'docker/*'
     branches:
-      - main
       - dev
+      - BIOW-5-Create-FreeBayes-Container
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -34,8 +34,3 @@ jobs:
           docker build \
           -t ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }} \
           -t ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest . -f docker/Dockerfile
-
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }} &&
-          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
