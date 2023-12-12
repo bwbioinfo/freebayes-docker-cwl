@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - dev
+      - BIOW-5-Create-FreeBayes-Container
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
