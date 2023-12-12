@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y \
 ENV DEBIAN_FRONTEND=noninteractive
 ENV freebayes_version=1.3.6
 
+# Test installation 
 CMD ["freebayes", "--version"]
